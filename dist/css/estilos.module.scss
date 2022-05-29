@@ -1,0 +1,50 @@
+/* New Stylesheet */
+.tituloprod{
+  	padding: 10px;
+  	background-color: #0C1187;
+  	color:#FBFCFC;
+  	text-align:center;
+  }
+.marcoprod{
+  	display: inline;
+    //flex-direction: row;
+    gap: 30px;
+  }
+.productos{
+  	display: flex;
+  	flex-direction: row;
+  	padding: 10px;
+  	background-color: #C7EFE9;
+  	border: 3px solid #F66F22;
+  }
+.textoprod{
+  	border-radius: 10px;
+  	width:50%;
+  	padding: 30px;
+  	border: 2px solid blue;
+  }
+.textoprod:hover{
+  box-shadow: 15px 15px 15px gray;
+  }
+.imagenes{
+  	margin:20px;
+  }
+.imagenes:hover{
+	border-radius: 10px;
+  box-shadow: 15px 15px 15px gray;
+}
+.imgportada{
+  background-color: #cfa38b;
+  background-image: url("dist/img/interiorindependencia.png");
+  background-size: cover;
+  width: 100%;
+  }
+.socials {
+    display: flex;
+    flex-direction: row;
+  	justify-content:center;
+  	flex-wrap:wrap;
+    gap: 30px;
+  	padding:20px;
+  	
+}
