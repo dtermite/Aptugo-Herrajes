@@ -79,7 +79,7 @@ const Productos: FunctionComponent = (props: any) => {
   const [categoriaProductoOptions, setcategoriaProductoOptions] = React.useState<{ label: String; value: String }[]>([])
   const typeInSearchcategoriaProductoCategorias = (typedIn) => {
     const searchOptions = { searchString: typedIn, searchField: 'nombreCategoria', page: 1, limit: 10 }
-    axios.get('http://127.0.0.1:4567/api/categorias/search/', { params: searchOptions }).then((result) => {
+    axios.get('https://herrajes_diegotermitegmailcom.backend.aptugo.app/api/categorias/search/', { params: searchOptions }).then((result) => {
       setcategoriaProductoOptions(
         result.data.docs.map((categoria) => {
           return { label: categoria.nombreCategoria, value: categoria._id }

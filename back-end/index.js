@@ -4,6 +4,7 @@ const fs = require('fs')
 const express = require('express')
 const bodyParser = require('body-parser')
 const fileupload = require('express-fileupload')
+const https = require('https')
 const app = express()
 app.set('filesFolder', __dirname + '/../dist/img')
 

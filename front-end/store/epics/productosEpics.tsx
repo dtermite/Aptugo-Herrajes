@@ -36,7 +36,7 @@ const searchProductosEpic: Epic<ProductosAction, ProductosAction, IState> = (act
           searchField: '_id',
         }
       }
-      let url = `http://127.0.0.1:4567/api/productos/search/`
+      let url = `https://herrajes_diegotermitegmailcom.backend.aptugo.app/api/productos/search/`
       return from(axios.get(url, { params: action.searchOptions })).pipe(
         map((response) => foundProductos(response.data, action.keep)),
         startWith(searchingProductos()),
@@ -50,7 +50,7 @@ const loadProductosEpic: Epic<ProductosAction, ProductosAction, IState> = (actio
   return action$.pipe(
     filter(isOfType(ProductosActionTypes.LOAD_PRODUCTOS)),
     switchMap((action) => {
-      let url = `http://127.0.0.1:4567/api/productos/`
+      let url = `https://herrajes_diegotermitegmailcom.backend.aptugo.app/api/productos/`
       return from(axios.get(url, { params: action.loadOptions })).pipe(
         map((response) => loadedProductos(response.data)),
         startWith(loadingProductos()),
@@ -73,7 +73,7 @@ const addProductosEpic: Epic<ProductosAction, ProductosAction, IState> = (action
         },
       }
 
-      return from(axios.post(`http://127.0.0.1:4567/api/productos/`, data, config)).pipe(
+      return from(axios.post(`https://herrajes_diegotermitegmailcom.backend.aptugo.app/api/productos/`, data, config)).pipe(
         map((response) => addedProductos(response.data)),
         startWith(addingProductos()),
         catchError((err) => of(addingProductosFailed(err.response)))
@@ -85,7 +85,7 @@ const removeProductosEpic: Epic<ProductosAction, ProductosAction, IState> = (act
   action$.pipe(
     filter(isOfType(ProductosActionTypes.REMOVE_PRODUCTO)),
     mergeMap((action) =>
-      from(axios.delete(`http://127.0.0.1:4567/api/productos/${action.payload._id}`)).pipe(
+      from(axios.delete(`https://herrajes_diegotermitegmailcom.backend.aptugo.app/api/productos/${action.payload._id}`)).pipe(
         map((response) => removedProducto()),
         startWith(removingProducto()),
         catchError(() => of(removingProductoFailed()))
@@ -105,7 +105,7 @@ const editProductosEpic: Epic<ProductosAction, ProductosAction, IState> = (actio
         },
       }
 
-      return from(axios.put(`http://127.0.0.1:4567/api/productos/${action.payload._id}`, data, config)).pipe(
+      return from(axios.put(`https://herrajes_diegotermitegmailcom.backend.aptugo.app/api/productos/${action.payload._id}`, data, config)).pipe(
         map((response) => editedProductos(response.data)),
         startWith(editingProductos()),
         catchError(() => of(editingProductosFailed()))

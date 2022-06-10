@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://127.0.0.1:4567/api/users/'
+const API_URL = 'https://herrajes_diegotermitegmailcom.backend.aptugo.app/api/users/'
 
 class AuthService {
   login(email, password) {

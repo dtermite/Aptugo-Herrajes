@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const fileupload = require('express-fileupload')
 
 const app = express()
-app.set('filesFolder', __dirname + '/../dist/img')
+app.set('filesFolder', '/var/www/wildcards/herrajes_diegotermitegmailcom.aptugo.app/img')
 
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
